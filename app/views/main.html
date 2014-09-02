@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="input-group">
+      <input type="text" class="form-control" ng-model="chueet" placeholder="ちゅいーとをぃれてね。">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="saveChueet()">Chu <span class="glyphicon glyphicon-heart"></span></button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+<div>{{chueet}}</div>
+
+<hr/>
+
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="chueet in chueetList">{{chueet.get('chueet')}}<span style="font-size:0.8em;float:right;">{{chueet.createdAt}}</span></li>
+</ul>
