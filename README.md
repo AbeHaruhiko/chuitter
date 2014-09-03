@@ -1,6 +1,36 @@
 chuitter
 ========
 
+## ちゅいったぁ作成手順
+
+```
+# npm install -g generator-angular
+$ mkdir chuitter
+$ cd chuitter
+$ yo angular
+$ grunt serve	# 動作確認
+mail.htmlを編集
+input=textと送信ボタンをおく。モデルデータ表示用divも。
+
+parseでアプリ作成
+quick starg guideからコピペ（オブジェクトの保存も下の方にある）
+
+main.jsに追加、取得関数追加
+
+# npm install -g generator-heroku
+$ yo heroku
+
+Gruntfileに設定追加。
+
+$ grunt build
+$ heroku apps:create chuitter
+$ git init
+$ git add .
+$ git commit -m’initial commit’
+$ git remote add heroku master
+$ git subtree push --prefix dist heroku master
+
+```
 
 ## 各種ツール・コマンドの紹介
 
@@ -28,6 +58,13 @@ http://nodejs.org/
 [第1回 Node.jsとは：基礎から学ぶNode.js｜gihyo.jp … 技術評論社](http://gihyo.jp/dev/serial/01/nodejs/0001)
 
 アプリケーションサーバ（サーバサイドJavaScript）として有名だが、ローカルPC上でいろんなツールを動作させるプラットフォームとしても人気。yeomanもnode.js上で動く。
+
+大浦さんが使っているらしい（？）。
+
+#### npm
+
+node.js用のパッケージマネージャ。
+`$ npm install hogehoge` で、hogehogeパッケージをインストールできたり。
 
 ### angularjs（あんぎゅらー、あんぎゅらーじぇいえす）
 
@@ -79,33 +116,32 @@ gitのリポジトリをWebで提供するサービス。ソーシャルコー�
 
 2014/07には **あの** マイクロソフトがTypeScriptなどのソースコードをGitHubで公開。
 
-## ちゅいったぁ作成手順
+松永さんが詳しい。
 
-```
-$ npm install -g generator-angular
-$ mkdir chuitter
-$ cd chuitter
-$ yo angular
-$ grunt serve	# 動作確認
-mail.htmlを編集
-input=textと送信ボタンをおく。モデルデータ表示用divも。
+### その他関連用語
 
-parseでアプリ作成
-quick starg guideからコピペ（オブジェクトの保存も下の方にある）
+#### MEAN
 
-main.jsに追加、取得関数追加
+MongoDB + Express + AngularJS + Node.jsのこと。
+昔で言うLAMP的なあれ。
 
+#### Sass, Compass
 
-$ npm install -g generator-heroku
-$ yo heroku
-Gruntfileに設定追加。
-$ grunt build
-$ heroku apps:create chuitter
-$ git init
-$ git add .
-$ git commit -m’initial commit’
-$ git remote add heroku master
-$ git subtree push --prefix dist heroku master
+CSSプリプロセッサ。CSSの記述にプログラミング的な概念を持ち込める仕組み。何度も同じ記述をしないですむよう繰り返し処理をさせたり、変数を定義して各所に埋め込んだり。専用の記法で書いて、コンパイルすると普通のCSSが生成される。
 
-```
+#### altJS
 
+JavaScriptのイケてないところをカバーする言語の総称。TypeScript、CoffeeScriptなど。コンパイルしてJSを生成する。
+
+#### CI
+
+Continuous Integration、継続的インテグレーション。ユニットテスト（※）を高頻度に回しながら開発しようぜ的なあれ。
+
+※ユニットテストは単体テストのことではありません。
+
+#### マークダウン
+
+軽量なマークアップ言語。
+行頭にシャープをひとつ付けると見出しレベル1、HTMLでいうH1を表す、など。
+
+このREADMEもマークダウン記法で書かれている。
