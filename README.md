@@ -15,7 +15,7 @@ input=textと送信ボタンをおく。モデルデータ表示用divも。
 parseでアプリ作成
 quick starg guideからコピペ（オブジェクトの保存も下の方にある）
 
-main.jsに追加、取得関数追加
+main.jsに保存関数追加、取得関数追加
 
 # npm install -g generator-heroku
 $ yo heroku
