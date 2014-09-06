@@ -17,6 +17,8 @@ quick starg guideからコピペ（オブジェクトの保存も下の方にあ
 
 main.jsに保存関数追加、取得関数追加
 
+main.htmlにリスト配置。
+
 # npm install -g generator-heroku
 $ yo heroku
 
